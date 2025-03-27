@@ -50,13 +50,52 @@ loginForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Simulation d'une connexion réussie (à remplacer par une vraie logique backend)
+    // Simulation d'une connexion réussie
     if (email === 'test@allocougar.com' && password === 'password123') {
         alert('Connexion réussie ! Bienvenue sur AlloCougar.');
-        // Ici, vous pourriez rediriger vers une page de tableau de bord
         // window.location.href = 'dashboard.html';
     } else {
         loginError.textContent = 'Email ou mot de passe incorrect.';
         loginError.style.display = 'block';
     }
+});
+
+// Gestion du formulaire d'inscription
+const registerForm = document.getElementById('register-form');
+const registerError = document.getElementById('register-error');
+
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    const email = document.getElementById('register-email').value.trim();
+    const password = document.getElementById('register-password').value.trim();
+    const confirmPassword = document.getElementById('confirm-password').value.trim();
+
+    // Réinitialiser le message d'erreur
+    registerError.style.display = 'none';
+    registerError.textContent = '';
+
+    // Validation
+    if (email === '' || password === '' || confirmPassword === '') {
+        registerError.textContent = 'Veuillez remplir tous les champs.';
+        registerError.style.display = 'block';
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        registerError.textContent = 'Les mots de passe ne correspondent pas.';
+        registerError.style.display = 'block';
+        return;
+    }
+
+    if (password.length < 6) {
+        registerError.textContent = 'Le mot de passe doit contenir au moins 6 caractères.';
+        registerError.style.display = 'block';
+        return;
+    }
+
+    // Simulation d'une inscription réussie (à remplacer par une vraie logique backend)
+    alert('Inscription réussie ! Bienvenue sur AlloCougar, ' + email + '.');
+    registerForm.reset(); // Réinitialise le formulaire
+    // window.location.href = 'dashboard.html'; // Redirection possible
 });
