@@ -85,6 +85,8 @@ nav a:hover, nav a.active {
     font-size: 1.1em;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
+    text-decoration: none; /* Pour les liens dans access-denied.html */
+    display: inline-block;
 }
 
 .cta-button:hover {
@@ -138,4 +140,27 @@ footer {
 
 .popup-content .cta-button {
     margin: 10px;
+}
+
+/* Style pour la page d'accès refusé */
+.denied-content {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.denied-content h2 {
+    color: #ff3399;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.denied-content p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
 }
