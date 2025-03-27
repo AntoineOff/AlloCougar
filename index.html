@@ -42,7 +42,18 @@
     <section id="connexion" class="tab-content">
         <h2>Connectez-vous</h2>
         <p>Accédez à votre compte pour retrouver vos messages et vos matchs.</p>
-        <button class="cta-button">Se connecter</button>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="cta-button">Se connecter</button>
+            <p id="login-error" class="error-message"></p>
+        </form>
     </section>
 
     <section id="apropos" class="tab-content">
