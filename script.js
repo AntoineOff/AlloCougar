@@ -21,11 +21,10 @@ const confirmButton = document.getElementById('confirm-age');
 const denyButton = document.getElementById('deny-age');
 
 confirmButton.addEventListener('click', () => {
-    popup.style.display = 'none';
+    popup.style.display = 'none'; // Ferme le popup
     document.body.style.overflow = 'auto'; // Réactive le scroll
 });
 
 denyButton.addEventListener('click', () => {
-    alert('Désolé, vous devez avoir 18 ans ou plus pour accéder à ce site.');
-    window.location.href = 'https://www.google.com'; // Redirige vers une autre page
+    window.location.href = 'access-denied.html'; // Redirige vers la page d'accès refusé
 });
